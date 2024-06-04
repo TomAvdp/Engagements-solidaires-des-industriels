@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des associations collaborant avec des adhérents Ilec</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Les engagements solidaires des industriels</h1>
+    </header>
+    <div id="menu">
+        <input type="text" id="searchInput" placeholder="Rechercher une entreprise...">
+        <select id="associationSelect" onchange="filterByAssociation()">
+            <option value="">Sélectionner une entreprise</option>
+        </select>
+        <button id="resetButton">Toutes</button>
+    </div>
+    <div id="content"></div>
+    <footer>
+        &copy; 2024 Ilec. Tous droits réservés.
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
