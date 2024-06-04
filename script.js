@@ -102,8 +102,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const contentDiv = document.getElementById('content');
         contentDiv.innerHTML = '';  // Effacer le contenu précédent
         data.forEach(item => {
-            const logoFileName = item.Entreprise.replace(/\s+/g, '-').replace("'", "").toLowerCase() + '.jpg';
-            console.log(`Trying to load image: logos/${logoFileName}`);  // Ajouter ce log pour vérifier les chemins des images
+            // Remplacer les caractères spéciaux et les espaces par des tirets
+            const logoFileName = item.Entreprise.replace(/\s+/g, '-').replace(/[^\w-]/g, '').toLowerCase() + '.jpg';
+            console.log(`Trying to load image: logos/${logoFileName}`);  // Log pour vérifier les chemins des images
             const div = document.createElement('div');
             div.classList.add('item');
             div.innerHTML = `
