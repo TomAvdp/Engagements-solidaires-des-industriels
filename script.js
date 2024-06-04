@@ -98,12 +98,24 @@ document.addEventListener('DOMContentLoaded', () => {
         displayData(combinedData);
     }
 
+    function normalizeString(str) {
+        return str
+            .replace(/\s+/g, '-')
+            .replace(/[éèêë]/g, 'e')
+            .replace(/[àâä]/g, 'a')
+            .replace(/[îï]/g, 'i')
+            .replace(/[ôö]/g, 'o')
+            .replace(/[ùûü]/g, 'u')
+            .replace(/[ç]/g, 'c')
+            .replace(/[^\w-]/g, '')
+            .toLowerCase();
+    }
+
     function displayData(data) {
         const contentDiv = document.getElementById('content');
         contentDiv.innerHTML = '';  // Effacer le contenu précédent
         data.forEach(item => {
-            // Remplacer les caractères spéciaux et les espaces par des tirets
-            const logoFileName = item.Entreprise.replace(/\s+/g, '-').replace(/[^\w-]/g, '').toLowerCase() + '.jpg';
+            const logoFileName = normalizeString(item.Entreprise) + '.jpg';
             console.log(`Trying to load image: logos/${logoFileName}`);  // Log pour vérifier les chemins des images
             const div = document.createElement('div');
             div.classList.add('item');
