@@ -72,3 +72,57 @@ footer {
     bottom: 0;
     font-size: 0.8rem;
 }
+.item {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 0.5rem;
+    padding: 1.5rem 1rem 1rem 1rem; 
+    width: 30%;
+    box-sizing: border-box;
+    text-align: center;
+    position: relative;
+    padding-top: 100px; /* Réduire le padding en haut pour laisser moins d'espace */
+}
+
+.item .logo {
+    width: 170px; /* Augmenter la largeur */
+    height: 170px; /* Augmenter la hauteur */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0 auto;
+    position: absolute;
+    top: 20px; /* Ajuster le positionnement pour centrer verticalement */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.item .entreprise {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 140px; /* Ajuster la marge pour rapprocher du logo */
+    color: #333;
+}
+
+.item .separator {
+    width: 50%;
+    height: 2px;
+    background-color: #ddd;
+    margin: 10px auto;
+}
+
+.item .associations-title {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #666;
+}
+
+.item .associations {
+    margin-top: 5px;
+    font-size: 0.9rem;
+    color: #555;
+}
+

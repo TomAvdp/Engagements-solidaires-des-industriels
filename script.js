@@ -60,6 +60,7 @@ const data = [
         "Associations": "SPA"
     }
 ];
+
 document.addEventListener('DOMContentLoaded', () => {
     const combinedData = [...data].sort((a, b) => a.Entreprise.localeCompare(b.Entreprise));
     const select = document.getElementById('associationSelect');
@@ -101,11 +102,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const contentDiv = document.getElementById('content');
         contentDiv.innerHTML = '';  // Effacer le contenu précédent
         data.forEach(item => {
+            const logoFileName = item.Entreprise.replace(/\s+/g, '-').replace("'", "").toLowerCase() + '.jpg';
             const div = document.createElement('div');
             div.classList.add('item');
             div.innerHTML = `
-                <strong>${item.Entreprise}</strong>
-                <p>${item.Associations}</p>
+                <div class="logo" style="background-image: url('logos/${logoFileName}');"></div>
+                <div class="entreprise">${item.Entreprise}</div>
+                <div class="separator"></div>
+                <div class="associations-title">Association(s) soutenue(s)</div>
+                <div class="associations">${item.Associations}</div>
             `;
             contentDiv.appendChild(div);
         });
